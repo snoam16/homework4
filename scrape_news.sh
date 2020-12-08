@@ -6,7 +6,7 @@ wget https://www.ynetnews.com/category/3082
 #copy the links from file 3082 to links.txt without repetitions
 grep -o "https://www.ynetnews.com/article/[a-zA-Z0-9]\{9\}" 3082 |\
  uniq > links.txt
-
+wc -l links.txt | cut -c1,2 >> results.csv
 #run on each link page and count bibi and gantz appearences
 for link in `cat links.txt`;
 do
